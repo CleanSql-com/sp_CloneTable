@@ -12,7 +12,7 @@ ALTER PROCEDURE [dbo].[sp_CloneTable]
 
 /* ==================================================================================================================== */
 /* Author:      CleanSql.com © Copyright CleanSql.com                                                                   */
-/* Create date: 2024-11-21                                                                                              */
+/* Create date: 2023-08-23                                                                                              */
 /* Description: Clones all tables from SourceDB into TargetDB, specified by input parameters: @SchemaNames/@TableNames  */
 /*              including all constraints, indexes (including XML indexes) and triggers                                 */
 /*              by default it will "translate" all user-defined datatypes from source into matching SQL Data types      */
@@ -42,8 +42,7 @@ DECLARE @SchemaNames              NVARCHAR(MAX) = N' Production'
                                                    , ProductSubcategory
                                                    , ScrapReason
                                                    , UnitMeasure
-                                                   , WorkOrder
-                                                   , ProductModelIllustration'
+                                                   , WorkOrder'
       , @TargetDbName             SYSNAME       = N'AdventureWorks2019_Clone'
 
 EXEC [dbo].[sp_CloneTable] @SchemaNames = @SchemaNames
